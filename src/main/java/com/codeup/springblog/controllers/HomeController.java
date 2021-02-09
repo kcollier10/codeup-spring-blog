@@ -9,7 +9,13 @@ public class HomeController {
 
     @GetMapping("/")
     @ResponseBody
-    public String welcome() {
+    public String landingPage() {
         return "Welcome to the landing page!";
+    }
+
+    // no ResponseBody
+    @GetMapping("/home")
+    public String welcome() {
+        return "home";
     }
 }
