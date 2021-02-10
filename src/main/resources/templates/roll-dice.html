@@ -9,12 +9,14 @@
 </head>
 <body>
 
-    <h1>Hello,
-        <!-- if there is no number guessed, use this -->
-        <span th:if="${n}" th:text="${n}"></span>
-        <!-- if there is not a name, use this -->
-        <span th:unless="${n}" > 0</span>
-    </h1>
+    <div class="numberLinks">
+        <a href="/roll-dice/1">1</a>
+        <a href="/roll-dice/2">2</a>
+        <a href="/roll-dice/3">3</a>
+        <a href="/roll-dice/4">4</a>
+        <a href="/roll-dice/5">5</a>
+        <a href="/roll-dice/6">6</a>
+    </div>
 
 
 </body>
