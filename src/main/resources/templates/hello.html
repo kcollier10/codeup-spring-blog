@@ -5,8 +5,11 @@
     <title>Home</title>
 </head>
 <body>
+    <nav th:include="partials/navbar" :: navbar></nav>
 
-<h1>Hello, <span th:text="${name}">World</span>!</h1>
+    <h1>Hello, <span th:text="${name}">World</span>!</h1>
+
+    <footer th:include="partials/navbar" :: footer></footer>
 
 </body>
 </html>
