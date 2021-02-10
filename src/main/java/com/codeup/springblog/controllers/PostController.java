@@ -1,24 +1,23 @@
 package com.codeup.springblog.controllers;
 
+import com.codeup.springblog.models.Post;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class PostController {
 
-    @RequestMapping(path = "/posts", method = RequestMethod.GET)
-    @ResponseBody
-    public String posts() {
-        return "This will be a posts page";
+    @GetMapping("/posts")
+    public String postsIndex(Model model, Post post) {
+        model.addAttribute("allPosts", post);
+        return "posts/index";
     }
 
-    @RequestMapping(path = "/posts/{id}", method = RequestMethod.GET)
-    @ResponseBody
-    public String postsId(@PathVariable String id) {
-        return "Your id is: " + id;
+    @GetMapping("/posts/{id}")
+    public String singlePost(@PathVariable String id, Model model) {
+        model.addAttribute("singlePost", id);
+        return "posts/show";
     }
 
     @RequestMapping(path = "/posts/create", method = RequestMethod.GET)

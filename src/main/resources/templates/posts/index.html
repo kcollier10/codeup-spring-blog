@@ -5,17 +5,19 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Roll Dice</title>
+    <title>Index</title>
 </head>
 <body>
 
-    <h1>Hello,
-        <!-- if there is no number guessed, use this -->
-        <span th:if="${n}" th:text="${n}"></span>
-        <!-- if there is not a name, use this -->
-        <span th:unless="${n}" > 0</span>
-    </h1>
+<nav th:include="partials/navbar" :: navbar></nav>
 
+<header th:include="partials/header" :: header></header>
+
+<div>
+    <h1 th:text="${allPosts}"></h1>
+</div>
+
+<footer th:include="partials/footer" :: footer></footer>
 
 </body>
 </html>

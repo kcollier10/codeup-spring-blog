@@ -7,9 +7,11 @@
 <body>
     <nav th:include="partials/navbar" :: navbar></nav>
 
+    <header th:include="partials/header" :: header></header>
+
     <h1>Hello, <span th:text="${name}">World</span>!</h1>
 
-    <footer th:include="partials/navbar" :: footer></footer>
+    <footer th:include="partials/footer" :: footer></footer>
 
 </body>
 </html>

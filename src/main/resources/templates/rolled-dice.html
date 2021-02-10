@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Roll Dice</title>
+</head>
+<body>
+
+<nav th:include="partials/navbar" :: navbar></nav>
+<header th:include="partials/header" :: header></header>
+
+    <div class="guess-results">
+        <div class="user-guess">USER GUESS: <span th:text="${n}"></span></div>
+        <div class="dice-roll">DICE ROLL: <span th:text="${diceRoll}"></span></div>
+
+        <div th:if="${diceRoll == n}">You did it!</div>
+        <div th:if="${diceRoll != n}">You did not guess the number. Try again!</div>
+        <button><a href="/roll-dice">Try Again</a></button>
+    </div>
+
+<footer th:include="partials/footer" :: footer></footer>
+
+</body>
+</html>
