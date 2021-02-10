@@ -28,6 +28,7 @@ public class HelloController {
 //        return number + " plus one is " + (number + 1) + "!";
 //    }
 
+    // {name} is our dynamic portion
     @GetMapping("/hello/{name}")
     public String sayHello(@PathVariable String name, Model model) {
         model.addAttribute("name", name);
