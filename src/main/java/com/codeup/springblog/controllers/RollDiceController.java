@@ -15,7 +15,9 @@ public class RollDiceController {
 
     @GetMapping("/roll-dice/{n}")
     public String numberPicked(@PathVariable int n, Model model) {
+        int diceRoll = (int) (Math.random() * (6 - 1 + 1) + 1);
         model.addAttribute("n", n);
+        model.addAttribute("diceRoll", diceRoll);
         return "rolled-dice";
     }
 
