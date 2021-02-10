@@ -5,6 +5,8 @@
     <title>Join</title>
 </head>
 <body>
+<nav th:include="partials/navbar" :: navbar></nav>
+<header th:include="partials/header" :: header></header>
 
 <h1 th:text="${cohort}"></h1>
 
@@ -12,6 +14,8 @@
     <input type="text" name="cohort" id="cohort-ip" class="field" />
     <button>Join now</button>
 </form>
+
+<footer th:include="partials/footer" :: footer></footer>
 
 </body>
 </html>

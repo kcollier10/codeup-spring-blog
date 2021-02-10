@@ -9,6 +9,9 @@
 </head>
 <body>
 
+<nav th:include="partials/navbar" :: navbar></nav>
+<header th:include="partials/header" :: header></header>
+
     <div class="guess-results">
         <div class="user-guess">USER GUESS: <span th:text="${n}"></span></div>
         <div class="dice-roll">DICE ROLL: <span th:text="${diceRoll}"></span></div>
@@ -17,6 +20,8 @@
         <div th:if="${diceRoll != n}">You did not guess the number. Try again!</div>
         <button><a href="/roll-dice">Try Again</a></button>
     </div>
+
+<footer th:include="partials/footer" :: footer></footer>
 
 </body>
 </html>
