@@ -16,13 +16,13 @@ public class PostController {
     }
 
     @GetMapping("/posts")
-    public String findAllPosts(Model model) {
+    public String allPosts(Model model) {
         model.addAttribute("allPosts", postsDao.findAll());
         return "posts/index";
     }
 
     @GetMapping("/posts/{id}")
-    public String findOnePost(@PathVariable long id, Model model) {
+    public String singlePost(@PathVariable long id, Model model) {
         model.addAttribute("singlePost", postsDao.findById(id));
         return "posts/show";
     }

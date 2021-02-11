@@ -1,6 +1,7 @@
 package com.codeup.springblog.models;
 import javax.persistence.*;
 
+// add @Entity tag to connect model to database
 @Entity
 @Table(name="posts")
 public class Post {
