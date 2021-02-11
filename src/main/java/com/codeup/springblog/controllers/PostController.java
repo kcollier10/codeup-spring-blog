@@ -1,5 +1,6 @@
 package com.codeup.springblog.controllers;
 
+import com.codeup.springblog.dao.PostRepository;
 import com.codeup.springblog.models.Post;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,9 +9,15 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class PostController {
 
+    private final PostRepository postsDao;
+
+    public PostController(PostRepository postsDao) {
+        this.postsDao = postsDao;
+    }
+
     @GetMapping("/posts")
-    public String postsIndex(Model model, Post post) {
-        model.addAttribute("allPosts", post);
+    public String findAllPosts(Model model) {
+        model.addAttribute("allPosts", postsDao.findAll());
         return "posts/index";
     }
 
