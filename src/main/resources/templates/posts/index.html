@@ -13,9 +13,12 @@
 
 <header th:include="partials/header" :: header></header>
 
-<div>
-    <h1 th:text="${allPosts}"></h1>
+
+<div th:each="post : ${allPosts}">
+    <h1 th:text="${post.title}"/>
+    <h2 th:text="${post.body}"/>
 </div>
+
 
 <footer th:include="partials/footer" :: footer></footer>
 
