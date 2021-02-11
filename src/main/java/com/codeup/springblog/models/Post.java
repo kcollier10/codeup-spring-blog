@@ -1,6 +1,7 @@
 package com.codeup.springblog.models;
 import javax.persistence.*;
 
+// add @Entity tag to connect model to database
 @Entity
 @Table(name="posts")
 public class Post {
@@ -12,7 +13,8 @@ public class Post {
     @Column(nullable = false, length = 100)
     private String title;
 
-    @Column(nullable = false)
+    // setting length about 255 will change column from varchar to text
+    @Column(nullable = false, length = 100000)
     private String body;
 
     public Post () {}

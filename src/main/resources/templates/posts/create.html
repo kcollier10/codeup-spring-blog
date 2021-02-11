@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create</title>
+</head>
+<body>
+
+<nav th:include="partials/navbar" :: navbar></nav>
+
+<header th:include="partials/header" :: header></header>
+
+<form id="createForm" class="createForm" action="/posts/create" method="POST">
+    <label for="postTitle">Title: </label>
+    <input type="text" id="postTitle">
+    <hr>
+    <label for="postBody">Body: </label>
+    <textarea id="postBody"></textarea>
+    <hr>
+    <button class="submitNewPost">Submit New Post</button>
+</form>
+
+<footer th:include="partials/footer" :: footer></footer>
+
+</body>
+</html>

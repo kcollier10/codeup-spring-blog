@@ -16,27 +16,27 @@ public class PostController {
     }
 
     @GetMapping("/posts")
-    public String findAllPosts(Model model) {
+    public String findAll(Model model) {
         model.addAttribute("allPosts", postsDao.findAll());
         return "posts/index";
     }
 
     @GetMapping("/posts/{id}")
-    public String findOnePost(@PathVariable long id, Model model) {
+    public String singlePost(@PathVariable long id, Model model) {
         model.addAttribute("singlePost", postsDao.findById(id));
         return "posts/show";
     }
 
     @RequestMapping(path = "/posts/create", method = RequestMethod.GET)
-    @ResponseBody
-    public String createGET() {
-        return "This is the create post GET method!";
+    public String createGET(Model model) {
+        model.addAttribute("createForm", new Post());
+        return "posts/create";
     }
 
     @RequestMapping(path = "/posts/create", method = RequestMethod.POST)
-    @ResponseBody
-    public String createPOST() {
-        return "This is the create post POST method!";
+    public String createPOST(Post post) {
+        Post newPost = postsDao.save(post);
+        return "/posts/index";
     }
 
 

@@ -1,0 +1,31 @@
+
+------------------------------
+ Questions to be answered
+ ------------------------------
+~How can we use Spring to interact with a data source? (a database management system)
+~What code / classes / abstractions will need to be created to CRUD entities (posts, users, etc.) in a Spring application?
+~What technologies are used to accomplish these things in Spring?
+
+------------------------------
+Data Technologies
+------------------------------
+~JPA - a Java ORM specification for how to interact with persistence in an application
+~ORM - Object Relational Mapper converting objects into DB table records and vice versa
+~Spring Data - a project of the Spring Framework concerning data management
+~Spring Data JPA - a subproject (module) defining how JPA is integrated into Spring
+~Hibernate - the actual implementation of JPA (the provider); supported by Spring Data JPA, among others.
+~Repositories - interfaces that further abstract from DAOs and contain methods to interact with data
+
+------------------------------
+Steps for implementing Repositories and JPA
+------------------------------
+Step 1. Create a database, a database user, grant permissions and add to application.properties
+Step 2. Import JPA and Annotate your POJO models. See curriculum.
+Step 3. Create and Repository class that extends JPARepository.
+Step 4. Go ye forth to your controller and add the following:
+        private final QuoteRepository quoteDao;
+        public QuotesController(QuoteRepository quoteDao) {
+            this.quoteDao = quoteDao;
+        }
+Step 5. Know that this repository comes out of the box with the following methods: findAll , getOne , save and delete
+Step 6. Call those methods from the quoteDao object where you need the data.
