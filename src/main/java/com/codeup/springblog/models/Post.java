@@ -8,13 +8,14 @@ public class Post {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(columnDefinition = "INT(11) UNSIGNED")
     private long id;
 
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false)
     private String title;
 
     // setting length about 255 will change column from varchar to text
-    @Column(nullable = false, length = 100000)
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String body;
 
     public Post () {}

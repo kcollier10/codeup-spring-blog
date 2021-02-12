@@ -5,22 +5,11 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Show</title>
+    <title>Document</title>
 </head>
 <body>
 
-<nav th:include="partials/navbar" :: navbar></nav>
-
-<header th:include="partials/header" :: header></header>
-<div>
-    <h1>Here is a single ad!</h1>
-</div>
-<div>
-    <h3 th:text="${singlePost.title}"/>
-    <h4 th:text="${singlePost.body}"/>
-</div>
-
-<footer th:include="partials/footer" :: footer></footer>
+    <input type="search" placeholder="SEARCH">
 
 </body>
 </html>

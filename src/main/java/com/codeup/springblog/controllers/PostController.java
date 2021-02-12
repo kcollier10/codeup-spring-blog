@@ -17,9 +17,12 @@ public class PostController {
         this.postsDao = postsDao;
     }
 
-    @GetMapping("/posts/index")
-    public String findAll(Model model) {
-        model.addAttribute("allPosts", postsDao.findAll());
+    @GetMapping("/posts")
+    public String postsIndex(Model model) {
+        List<Post> postList = postsDao.findAll();
+        model.addAttribute("title", "Blog Posts");
+        model.addAttribute("posts", postList);
+
         return "posts/index";
     }
 
@@ -39,9 +42,18 @@ public class PostController {
     @RequestMapping(path = "/posts/create", method = RequestMethod.POST)
     public String createPostPOST(Post post) {
         postsDao.save(post);
-        return "/posts/index";
+        return "redirect:/posts/" + post.getId();
     }
 
+    @GetMapping("/posts/delete")
+    public void deletePost() {
+        postsDao.deleteById(1L);
+    }
 
+    @GetMapping("/posts/search")
+    @ResponseBody
+    public Post returnPostByTitle(String title) {
+        return postsDao.findByTitle(title);
+    }
 
 }
