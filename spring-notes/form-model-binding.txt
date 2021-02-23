@@ -1,0 +1,38 @@
+FLOW:
+
+-GET Request => /posts/create
+    -adds a 'post' object to our model so we can reference it in our form
+    -connects to backend
+-Return the posts/create view
+    -Form with form model binding
+
+-Submit the form => Post Request => posts/create
+-Access the form with the @ModelAttribute annotations
+    -set the user
+    -save the post using the postsDao
+-Redirect to /posts => posts view
+
+OLD WAY:
+<form action="/ads/create" method="post">
+    Title:<input name="title" />
+    Description:<input name="description" />
+    <input type="submit" />
+</form>
+
+NEW WAY:
+<form action="/posts/create" method="post" th:object="${ad}">
+    Title:
+    <input th:field="*{title}" />
+    <br />
+    Description:
+    <input th:field="*{description}" />
+    <br />
+    <input type="submit" />
+</form>
+
+@GetMapping("/posts/create")
+public String create(@ModelAttribute Post post) {
+    postsDao.save(post);
+    return "redirect:/posts/view"
+}
+

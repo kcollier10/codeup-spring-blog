@@ -17,8 +17,19 @@
 </div>
 <div>
     <h3 th:text="${singlePost.title}"/>
+    <h6 th:text = "'Authored by ' + ${singlePost.user.email}" />
     <h4 th:text="${singlePost.body}"/>
+
+    <form th:action="@{/posts/edit/${singlePost.id}}" th:method="post">
+        <button>EDIT</button>
+    </form>
+
+    <form th:action="@{/posts/delete/${singlePost.id}}" th:method="post">
+        <button>DELETE</button>
+    </form>
+
 </div>
+
 
 <footer th:include="partials/footer" :: footer></footer>
 

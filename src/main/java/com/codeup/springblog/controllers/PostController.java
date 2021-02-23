@@ -14,45 +14,47 @@ import java.util.List;
 public class PostController {
 
     private final PostRepository postsDao;
-    private final UserRepository userDao;
+    private final UserRepository usersDao;
 
 
-    public PostController(PostRepository postsDao, UserRepository userDao) {
+    public PostController(PostRepository postsDao, UserRepository usersDao) {
         this.postsDao = postsDao;
-        this.userDao = userDao;
+        this.usersDao = usersDao;
     }
 
     @GetMapping("/posts")
     public String postsIndex(Model model) {
-        List<Post> postList = postsDao.findAll();
-        model.addAttribute("title", "Blog Posts");
-        model.addAttribute("posts", postList);
+        List<Post> posts = postsDao.findAll();
+        model.addAttribute("posts", posts);
 
         return "posts/index";
     }
 
     @GetMapping("/posts/{id}")
-    public String viewPost(@PathVariable long id, Model model) {
+    public String viewPost(Model model, @PathVariable long id) {
         Post post = postsDao.getOne(id);
         model.addAttribute("singlePost", post);
         return "posts/show";
     }
 
-    @RequestMapping(path = "/posts/create", method = RequestMethod.GET)
+    @GetMapping(path = "/posts/create")
     public String createPostGET(Model model) {
-        model.addAttribute("createForm", new Post());
+        model.addAttribute("post", new Post());
         return "posts/create";
     }
 
-    @RequestMapping(path = "/posts/create", method = RequestMethod.POST)
-    public String createPostPOST(Post post) {
+    @PostMapping(path = "/posts/create")
+    public String createPostPOST(@ModelAttribute Post post) {
+        User user = usersDao.findAll().get(0);
+        post.setUser(user);
         postsDao.save(post);
-        return "redirect:/posts/" + post.getId();
+        return "redirect:/posts";
     }
 
-    @GetMapping("/posts/delete")
-    public void deletePost() {
-        postsDao.deleteById(1L);
+    @PostMapping("/posts/delete/{id}")
+    public String deletePost(@PathVariable long id) {
+        postsDao.deleteById(id);
+        return "redirect:/posts";
     }
 
     @GetMapping("/posts/search")
@@ -61,4 +63,18 @@ public class PostController {
         return postsDao.findByTitle(title);
     }
 
+
+    @GetMapping("/posts/edit/{id}")
+    public String editGET(@PathVariable long id, Model model) {
+        Post post = postsDao.getOne(id);
+        model.addAttribute("post", post);
+        return "posts/edit";
+    }
+
+    @PostMapping("/posts/edit/{id}")
+    public String editPOST(@PathVariable long id, @ModelAttribute Post edit) {
+        edit.setUser(postsDao.getOne(id).getUser());
+        postsDao.save(edit);
+        return "redirect:/posts";
+    }
 }

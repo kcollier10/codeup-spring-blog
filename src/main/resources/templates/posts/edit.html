@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Create</title>
+    <title>Edit</title>
 </head>
 <body>
 
@@ -13,14 +13,14 @@
 
 <header th:include="partials/header" :: header></header>
 
-<form th:action="@{/posts/create}" th:method="post" th:object="${post}">
+<form th:action="@{/posts/edit/${post.id}}" th:method="POST" th:object="${post}">
     <label for="title">Title: </label>
-    <input class="form-control" type="text" id="title" th:field="*{title}">
+    <input class="form-control" type="text" id="title" th:field="*{title}" th:value="post.title">
     <hr>
     <label for="body">Body: </label>
-    <input type="text" id="body" th:field="*{body}"></textarea>
+    <textarea class="form-control" id="body" th:field="*{body}" th:value="post.title"></textarea>
     <hr>
-    <input type="submit">Submit New Post</input>
+    <button class="editPost" type="submit">Update</button>
 </form>
 
 <footer th:include="partials/footer" :: footer></footer>
