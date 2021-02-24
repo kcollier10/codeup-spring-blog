@@ -2,7 +2,12 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: theme => ({
+        ... theme('user-images'),
+        'blog-avatar': "url(/src/main/resources/static/img/orange.jpg)"
+      })
+    },
   },
   variants: {
     extend: {},
