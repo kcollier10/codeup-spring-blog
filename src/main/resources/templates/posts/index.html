@@ -15,14 +15,16 @@
 <header th:include="partials/header" :: header></header>
 
 <h1>::Latest Posts::</h1>
-<div class="max-w-sm w-full lg:max-w-full lg:flex">
+<div class="w-full lg:max-w-full lg:flex">
     <div th:each="post : ${posts}" class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-        <div class="bg-blog-avatar h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden">
-        </div>
+    <img class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" src="img/orange.jpg" alt="blog_header">
+<!--        <img class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" src="img/orange.jpg">-->
+    <div class="mb-8">
         <p class="uppercase p-0.5 text-xl mb-2 font-bold" th:text="${post.title}"/></p>
         <div class="p-0.5 text-base" th:text="${post.body}"/>
+    </div>
         <div class="member flex items-center">
-            <img class="w-10 h-10 rounded-full mr-4" src="./src/main/resources/static/img/placeholder-avatar.jpeg">
+            <img class="w-10 h-10 rounded-full mr-4" src="img/placeholder-avatar.jpeg">
             <div class="text-sm">
                 <p class="text-gray-900 leading-none" th:text="${post.user.username}"></p>
                 <p class="text-gray-600">Exampluary 7, 2738</p>

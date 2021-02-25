@@ -4,6 +4,8 @@ import com.codeup.springblog.models.User;
 import com.codeup.springblog.repositories.PostRepository;
 import com.codeup.springblog.models.Post;
 import com.codeup.springblog.repositories.UserRepository;
+import com.codeup.springblog.services.EmailService;
+import com.codeup.springblog.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -15,11 +17,15 @@ public class PostController {
 
     private final PostRepository postsDao;
     private final UserRepository usersDao;
+    private final EmailService emailService;
+    private final UserService userService;
 
 
-    public PostController(PostRepository postsDao, UserRepository usersDao) {
+    public PostController(PostRepository postsDao, UserRepository usersDao, EmailService emailService, UserService userService) {
         this.postsDao = postsDao;
         this.usersDao = usersDao;
+        this.emailService = emailService;
+        this.userService = userService;
     }
 
     @GetMapping("/posts")
@@ -45,9 +51,18 @@ public class PostController {
 
     @PostMapping(path = "/posts/create")
     public String createPostPOST(@ModelAttribute Post post) {
-        User user = usersDao.findAll().get(0);
+//        User user = usersDao.findAll().get(0);
+        User user = userService.loggedInUser();
         post.setUser(user);
-        postsDao.save(post);
+        Post savedPost = postsDao.save(post);
+
+        String subject = "New Ad Created!";
+        String body = "Dear " + savedPost.getUser().getUsername()
+                + ",\nThank you for creating an ad on our site.\n"
+                + "Your ad's id is " + savedPost.getId()
+                + ".\nHave a great day!";
+
+        emailService.prepareAndSend(savedPost, subject, body);
         return "redirect:/posts";
     }
 

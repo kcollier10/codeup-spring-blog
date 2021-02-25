@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       backgroundImage: theme => ({
         ... theme('user-images'),
-        'blog-avatar': "url(/src/main/resources/static/img/orange.jpg)"
+        'blog-avatar': "url(/static/img/orange.jpg)"
       })
     },
   },
