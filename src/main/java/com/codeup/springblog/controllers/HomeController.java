@@ -14,8 +14,15 @@ public class HomeController {
     }
 
     // no ResponseBody
-    @GetMapping("/home")
-    public String welcome() {
-        return "home";
+//    @GetMapping("/home")
+//    public String welcome() {
+//        return "home";
+//    }
+
+    @GetMapping("/login")
+    public String showLoginForm() {
+        return "login";
     }
+
+
 }

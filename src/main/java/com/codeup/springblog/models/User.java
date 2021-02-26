@@ -24,6 +24,12 @@ public class User {
 
     public User() {}
 
+    public User(User copy) {
+        this.username = copy.username;
+        this.password = copy.password;
+        this.email = copy.email;
+    }
+
     public User(long id, String username, String email, String password) {
         this.id = id;
         this.username = username;
@@ -78,6 +84,7 @@ public class User {
         this.password = password;
         this.posts = posts;
     }
+
 
 
 }

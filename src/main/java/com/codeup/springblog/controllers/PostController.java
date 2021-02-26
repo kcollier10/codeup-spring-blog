@@ -19,6 +19,7 @@ public class PostController {
     private final UserRepository usersDao;
     private final EmailService emailService;
     private final UserService userService;
+    private User users;
 
 
     public PostController(PostRepository postsDao, UserRepository usersDao, EmailService emailService, UserService userService) {
@@ -79,17 +80,18 @@ public class PostController {
     }
 
 
-    @GetMapping("/posts/edit/{id}")
+    @GetMapping("/posts/{id}/edit")
     public String editGET(@PathVariable long id, Model model) {
         Post post = postsDao.getOne(id);
         model.addAttribute("post", post);
         return "posts/edit";
     }
 
-    @PostMapping("/posts/edit/{id}")
+    @PostMapping("/posts/{id}/edit")
     public String editPOST(@PathVariable long id, @ModelAttribute Post edit) {
         edit.setUser(postsDao.getOne(id).getUser());
         postsDao.save(edit);
         return "redirect:/posts";
     }
+
 }
