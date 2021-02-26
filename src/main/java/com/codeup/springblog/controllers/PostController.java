@@ -19,7 +19,6 @@ public class PostController {
     private final UserRepository usersDao;
     private final EmailService emailService;
     private final UserService userService;
-    private User users;
 
 
     public PostController(PostRepository postsDao, UserRepository usersDao, EmailService emailService, UserService userService) {
