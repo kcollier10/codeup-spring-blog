@@ -53,7 +53,7 @@ public class PostController {
     @PostMapping(path = "/posts/create")
     public String createPostPOST(@ModelAttribute Post post) {
 //        User user = usersDao.findAll().get(0);
-        User user = userService.loggedInUser();
+        User user = userService.getLoggedInUser();
         post.setUser(user);
         Post savedPost = postsDao.save(post);
 
