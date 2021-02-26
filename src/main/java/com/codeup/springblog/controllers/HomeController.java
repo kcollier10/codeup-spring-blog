@@ -33,24 +33,4 @@ public class HomeController {
 //        return "home";
 //    }
 
-    @GetMapping("/login")
-    public String showLoginForm() {
-        return "users/login";
-    }
-
-    @GetMapping("/sign-up")
-    public String showSignUpForm(Model model) {
-        model.addAttribute("user", new User());
-        return "users/sign-up";
-    }
-
-    @PostMapping("/sign-up")
-    public String createNewUser(@ModelAttribute User user) {
-        String hash = encoder.encode(user.getPassword());
-        user.setPassword(hash);
-        userDao.save(user);
-        return "redirect:/login";
-    }
-
-
 }
