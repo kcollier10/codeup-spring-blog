@@ -15,7 +15,9 @@ public class UserService {
 
     // returns user in our database
     public User getLoggedInUser() {
-        return (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        long userId = user.getId();
+        return usersDao.findById(userId).get();
     }
 
 }
