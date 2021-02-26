@@ -13,24 +13,18 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HomeController {
 
-    private final UserRepository userDao;
-    private final PasswordEncoder encoder;
-
-    public HomeController(UserRepository userDao, PasswordEncoder encoder) {
-        this.userDao = userDao;
-        this.encoder = encoder;
-    }
+//    private final UserRepository userDao;
+//    private final PasswordEncoder encoder;
+//
+//    public HomeController(UserRepository userDao, PasswordEncoder encoder) {
+//        this.userDao = userDao;
+//        this.encoder = encoder;
+//    }
 
     @GetMapping("/")
     @ResponseBody
     public String landingPage() {
         return "Welcome to the landing page!";
     }
-
-    // no ResponseBody
-//    @GetMapping("/home")
-//    public String welcome() {
-//        return "home";
-//    }
 
 }

@@ -13,13 +13,9 @@ public class UserService {
         this.usersDao = usersDao;
     }
 
-
     // returns user in our database
     public User getLoggedInUser() {
-        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        long userId = user.getId();
-        return usersDao.findById(userId).get();
+        return (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     }
-
 
 }

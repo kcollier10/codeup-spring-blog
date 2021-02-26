@@ -27,10 +27,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     // overrides method from other class
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-                .userDetailsService(usersLoader) // How to find users by their username
-                .passwordEncoder(passwordEncoder()) // How to encode and verify passwords
-        ;
+        auth.userDetailsService(usersLoader).passwordEncoder(passwordEncoder()); // How to encode and verify passwords
     }
 
     @Override
@@ -39,7 +36,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.formLogin()
                 /* Login configuration */
                 .loginPage("/login")
-                .defaultSuccessUrl("/") // user's home page, it can be any URL
+                .defaultSuccessUrl("/posts") // user's home page, it can be any URL
                 .permitAll() // Anyone can go to the login page
                 /* Logout configuration */
                 .and()
@@ -54,7 +51,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers(
-                        "/posts/*" // only authenticated users can create ads
+                        "/posts/edit/{id}", "/posts/create" // only authenticated users can create ads
                         // only authenticated users can edit ads
                 )
                 .authenticated()

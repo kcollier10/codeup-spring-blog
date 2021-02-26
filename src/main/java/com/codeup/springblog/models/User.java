@@ -9,7 +9,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(nullable=false)
+    @Column(nullable=false, unique=true)
     private String username;
     @Column(nullable=false)
     private String email;
@@ -27,8 +27,8 @@ public class User {
     public User(User copy) {
         this.id = copy.id;
         this.username = copy.username;
-        this.password = copy.password;
         this.email = copy.email;
+        this.password = copy.password;
     }
 
     public User(long id, String username, String email, String password) {

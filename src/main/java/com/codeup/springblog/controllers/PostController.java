@@ -6,7 +6,6 @@ import com.codeup.springblog.models.Post;
 import com.codeup.springblog.repositories.UserRepository;
 import com.codeup.springblog.services.EmailService;
 import com.codeup.springblog.services.UserService;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -19,12 +18,14 @@ public class PostController {
     private final PostRepository postsDao;
     private final UserRepository usersDao;
     private final EmailService emailService;
+    private final UserService userService;
 
 
-    public PostController(PostRepository postsDao, UserRepository usersDao, EmailService emailService) {
+    public PostController(PostRepository postsDao, UserRepository usersDao, EmailService emailService, UserService userService) {
         this.postsDao = postsDao;
         this.usersDao = usersDao;
         this.emailService = emailService;
+        this.userService = userService;
     }
 
     @GetMapping("/posts")
@@ -51,7 +52,7 @@ public class PostController {
     @PostMapping(path = "/posts/create")
     public String createPostPOST(@ModelAttribute Post post) {
 //        User user = usersDao.findAll().get(0);
-        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = userService.getLoggedInUser();
         post.setUser(user);
         Post savedPost = postsDao.save(post);
 
