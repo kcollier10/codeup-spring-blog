@@ -37,8 +37,28 @@ public class StartupRunner implements CommandLineRunner {
 
         Post post = new Post();
         post.setTitle("Demo title");
-        post.setBody("Demo body");
+        post.setBody("lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem ");
         post.setUser(user);
         postDao.save(post);
+
+        Post post1 = new Post();
+        post1.setTitle("Demo title");
+        post1.setBody("lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem ");
+        post1.setUser(user);
+        postDao.save(post1);
+
+         Post post2 = new Post();
+        post2.setTitle("Demo title");
+        post2.setBody("lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem ");
+        post2.setUser(user);
+        postDao.save(post2);
+
+        Post post3 = new Post();
+        post3.setTitle("Demo title");
+        post3.setBody("lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem ");
+        post3.setUser(user);
+        postDao.save(post3);
+
+
     }
 }

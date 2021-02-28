@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+
+    .cards {
+        @apply col-span-full md:col-span-6 lg:col-span-4 xl:col-span-3 bg-codeupGreen bg-opacity-70 rounded-md flex flex-col justify-between dark:text-gray-200
+    }
+
+}
