@@ -5,6 +5,9 @@
     <title>Sign up</title>
 </head>
 <body>
+
+<nav th:include="partials/navbar" :: navbar></nav>
+<br><hr><br>
 <h1>Create an account</h1>
 <form th:action="@{/sign-up}" method="POST" th:object="${user}">
     <label for="username">Username</label>
@@ -18,5 +21,9 @@
 
     <input value="Sign me up!" type="submit" />
 </form>
+<br>
+
+<footer th:include="partials/footer" :: footer></footer>
+
 </body>
 </html>

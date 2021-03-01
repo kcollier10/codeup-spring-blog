@@ -5,6 +5,9 @@
     <title>Log In</title>
 </head>
 <body>
+
+<nav th:include="partials/navbar" :: navbar></nav>
+
 <h1>Log In</h1>
 <div th:if="${param.error}">
     Invalid Username and Password.
@@ -20,5 +23,8 @@
     <input id="password" name="password" type="password" />
     <input type="submit" value="Log In" />
 </form>
+
+<footer th:include="partials/footer" :: footer></footer>
+
 </body>
 </html>

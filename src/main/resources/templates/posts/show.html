@@ -12,9 +12,7 @@
 <nav th:include="partials/navbar" :: navbar></nav>
 
 <header th:include="partials/header" :: header></header>
-<div>
-    <h1>Here is a single ad!</h1>
-</div>
+
 <div>
     <h3 th:text="${singlePost.title}"/>
     <h6 th:text = "'Authored by ' + ${singlePost.user.email}" />
