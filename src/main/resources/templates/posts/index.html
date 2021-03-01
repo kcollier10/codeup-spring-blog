@@ -21,7 +21,12 @@
     <!--        <img class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" src="img/orange.jpg">-->
         <div class="mb-8">
             <p class="uppercase p-0.5 text-xl mb-2 font-bold" th:text="${post.title}"/></p>
-            <div class="p-0.5 text-base" th:text="${post.body}"/>
+            <div class="p-0.5 max-h-12 overflow-hidden overflow-ellipsis block" th:text="${post.body}"/>
+            <div>
+                <form th:action="@{/posts/${post.id}}">
+                    <button class="flex-row flex-end border border-yellow-600 border-2">Read more...</button>
+                </form>
+            </div>
         </div>
         <div class="member flex items-center">
             <img class="w-10 h-10 rounded-full mr-4" src="img/placeholder-avatar.jpeg">
