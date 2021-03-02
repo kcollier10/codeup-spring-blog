@@ -6,6 +6,10 @@
 </head>
 <body>
 
+<div th:if="${param.error}">
+    Username already exists in database.
+</div>
+
 <nav th:include="partials/navbar" :: navbar></nav>
 <br><hr><br>
 <h1>Create an account</h1>
