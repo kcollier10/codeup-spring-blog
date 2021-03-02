@@ -10,7 +10,16 @@
 <nav th:include="partials/navbar" :: navbar></nav>
 <header th:include="partials/header" :: header></header>
 
-<h1>Welcome to XPerience!</h1>
+<div class="welcome flex justify-center">
+    <h1 class="items-center p-0.5 text-2xl italic">Welcome to XPerience!</h1>
+</div>
+
+<div class="flex space-around">
+    <div>
+        <a th:href="@{|/posts|}" class="border border-3 p-1.5">VIEW ALL XPeriences</a>
+    </div>
+        <a th:href="@{|/posts/search|}" class="border border-3 p-1.5">Search XPeriences...</a>
+</div>
 
 <footer th:include="partials/footer" :: footer></footer>
 

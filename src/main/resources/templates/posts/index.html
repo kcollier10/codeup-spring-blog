@@ -20,7 +20,7 @@
         <img class="h-48 lg:w-auto lg:h-48 lg:w-auto flex-none bg-cover rounded text-center overflow-hidden" src="img/orange.jpg" alt="blog_header">
     <!--        <img class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" src="img/orange.jpg">-->
         <div class="mb-8">
-            <p class="uppercase p-0.5 text-xl mb-2 font-bold" th:text="${post.title}"/></p>
+            <p class="uppercase p-0.5 h-14 text-xl mb-2 font-bold" th:text="${post.title}"/></p>
             <div class="p-0.5 max-h-12 overflow-hidden overflow-ellipsis block" th:text="${post.body}"/>
             <div>
                 <a th:href="@{|/posts/${post.id}|}">Read more...</a>
