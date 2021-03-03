@@ -8,20 +8,22 @@
 <body>
 
 <nav th:include="partials/navbar" :: navbar></nav>
-<header th:include="partials/header" :: header></header>
+<!--<header th:include="partials/header" :: header></header>-->
 
 <div class="welcome flex justify-center">
-    <h1 class="items-center p-0.5 text-2xl italic">Welcome to XPerience!</h1>
+    <h1 class="items-center p-0.5 text-4xl italic mt-2.5 mb-2.5">Welcome to XPerience!</h1>
 </div>
 
-<div class="flex space-around">
-    <div>
+<div class="flex justify-center">
+    <div class="p-1.5">
         <a th:href="@{|/posts|}" class="border border-3 p-1.5">VIEW ALL XPeriences</a>
     </div>
+    <div class="p-1.5">
         <a th:href="@{|/posts/search|}" class="border border-3 p-1.5">Search XPeriences...</a>
+    </div>
 </div>
 
-<footer th:include="partials/footer" :: footer></footer>
+<!--<footer th:include="partials/footer" :: footer></footer>-->
 
 
 </body>
