@@ -10,10 +10,12 @@
 
 <div class="w-full">
     <nav th:fragment="navbar" class="bg-black flex justify-between">
-        <div>
-            <img class="h-10 w-10 rounded-full p-1.5" src="img/placeholder-avatar.jpeg" alt="logo">
-        </div>
         <!-- awesome navbar goes here -->
+        <div class="logo">
+            <div class="bg-black">
+                <img class="h-10 bg-green-300 pl-1 pr-1" src="img/XPeriencelogo.png" alt="logo">
+            </div>
+        </div>
         <ul class="flex flex-row">
             <li class="border-double p-1.5">
                 <form th:action="@{/}">
@@ -46,6 +48,9 @@
                 </form>
             </li>
         </ul>
+        <div>
+            <img class="h-10 w-10 rounded-full p-1.5" src="img/placeholder-avatar.jpeg" alt="logo">
+        </div>
     </nav>
 </div>
 

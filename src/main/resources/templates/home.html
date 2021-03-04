@@ -10,10 +10,10 @@
 <nav th:include="partials/navbar" :: navbar></nav>
 <!--<header th:include="partials/header" :: header></header>-->
 <div>
-    <div class="welcome flex justify-center">
-        <h1 class="items-center p-0.5 text-4xl italic mt-2.5 mb-2.5">Welcome to XPerience!</h1>
+    <div class="welcome flex flex-row justify-center items-center">
+        <p class="text-5xl mr-3 pb-2">Welcome to</p>
+        <img class="h-15 pt-2" src="img/XPeriencelogo.png" alt="big-logo">
     </div>
-
     <div class="flex justify-center">
         <div class="p-1.5">
             <a th:href="@{|/posts|}" class="border border-3 p-1.5">VIEW ALL XPeriences</a>
