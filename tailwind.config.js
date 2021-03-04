@@ -6,7 +6,7 @@ module.exports = {
       greenCustom: '#64FF5C',
       grayCustom: '#788D91',
       blackCustom: '#0a0a0a',
-      whiteCustom: '#1c1a23',
+      whiteCustom: '#f5f5f5',
       darkGreenCustom: '#1c1a23',
     },
     // extend: {
