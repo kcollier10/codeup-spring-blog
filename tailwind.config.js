@@ -5,12 +5,12 @@ module.exports = {
     colors: {
       greenLime: '#64FF5C',
     },
-    extend: {
-      backgroundImage: theme => ({
-        ... theme('user-images'),
-        'blog-avatar': "url(/static/img/orange.jpg)"
-      })
-    },
+    // extend: {
+    //   backgroundImage: theme => ({
+    //     ... theme('user-images'),
+    //     'blog-avatar': "url(/static/img/orange.jpg)"
+    //   })
+    // },
   },
   variants: {
     extend: {},
