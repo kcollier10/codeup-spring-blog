@@ -5,7 +5,7 @@ module.exports = {
     colors: {
       greenCustom: '#64FF5C',
       grayCustom: '#788D91',
-      blackCustom: '#1c1a23',
+      blackCustom: '#0a0a0a',
       whiteCustom: '#1c1a23',
       darkGreenCustom: '#1c1a23',
     },
