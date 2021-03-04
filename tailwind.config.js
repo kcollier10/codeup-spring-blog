@@ -8,6 +8,7 @@ module.exports = {
       blackCustom: '#0a0a0a',
       whiteCustom: '#f5f5f5',
       darkGreenCustom: '#1c1a23',
+      lightGrayCustom: '#e0e0e0',
     },
     // extend: {
     //   backgroundImage: theme => ({
