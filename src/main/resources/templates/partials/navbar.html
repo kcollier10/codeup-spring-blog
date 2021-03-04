@@ -6,13 +6,13 @@
     <!-- include stylesheets, etc here -->
     <link rel="stylesheet" type="text/css" href="/css/tailwind.css">
 </head>
-<body class="bg-grayCustom">
+<body class="whiteCustom">
 
 <div class="w-full">
     <nav th:fragment="navbar" class="bg-blackCustom flex justify-between">
         <!-- awesome navbar goes here -->
         <div class="flex flex-row justify-between">
-            <a th:href="@{|/|}"><img class="h-10 bg-greenLime pl-1 pr-1" src="img/XPeriencelogo.png" alt="logo">
+            <a th:href="@{|/|}"><img class="h-10 bg-greenCustom pl-1 pr-1" src="img/XPeriencelogo.png" alt="logo">
             </a>
 
 <!--            <p id="hamburgerbtn" class="md:hidden text-white border border-white">-->
@@ -23,31 +23,31 @@
 
             <li class="border-double p-1.5">
                 <form th:action="@{/posts}">
-                    <button class="text-white">ALL POSTS</button>
+                    <button class="text-whiteCustom">ALL POSTS</button>
                 </form>
             </li>
             <li class="border-double p-1.5">
                 <form th:action="@{/posts/create}">
-                    <button class="text-white">CREATE
+                    <button class="text-whiteCustom">CREATE
                     </button>
                 </form>
             </li>
             <li class="p-1.5">
-                <p class="text-white">  ||  </p>
+                <p class="text-whiteCustom">  ||  </p>
             </li>
             <li class="border-double p-1.5">
               <form th:action="@{/login}">
-                    <button class="text-white">LOGIN</button>
+                    <button class="text-whiteCustom">LOGIN</button>
                 </form>
             </li>
             <li class="border-double p-1.5">
                <form th:action="@{/logout}" th:method="post">
-                    <button class="text-white">LOGOUT</button>
+                    <button class="text-whiteCustom">LOGOUT</button>
                 </form>
             </li>
             <li class="border-double p-1.5">
                 <form th:action="@{/sign-up}">
-                    <button class="text-white">SIGNUP</button>
+                    <button class="text-whiteCustom">SIGNUP</button>
                 </form>
             </li>
         </ul>
