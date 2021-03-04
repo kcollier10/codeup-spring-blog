@@ -8,41 +8,46 @@
 </head>
 <body class="bg-gray-300">
 
-<nav th:fragment="navbar" class="bg-black h-12 align-middle">
-    <!-- awesome navbar goes here -->
-    <ul class="flex justify-around align-middle">
-        <li class="border-double p-1.5 bg-yellow-700">
-            <form th:action="@{/}">
-                <button class="text-white">HOME</button>
-            </form>
-        </li>
-        <li class="border-double p-1.5 bg-yellow-700">
-            <form th:action="@{/posts}">
-                <button class="text-white">ALL POSTS</button>
-            </form>
-        </li>
-        <li class="border-double p-1.5 bg-green-800">
-            <form th:action="@{/posts/create}">
-                <button class="text-white">CREATE POST</button>
-            </form>
-        </li>
-        <li class="border-double p-1.5 bg-green-800">
-          <form th:action="@{/login}">
-                <button class="text-white">LOGIN</button>
-            </form>
-        </li>
-        <li class="border-double p-1.5 bg-green-800">
-           <form th:action="@{/logout}" th:method="post">
-                <button class="text-white">LOGOUT</button>
-            </form>
-        </li>
-        <li class="border-double p-1.5 bg-green-800">
-            <form th:action="@{/sign-up}">
-                <button class="text-white">SIGNUP</button>
-            </form>
-        </li>
-    </ul>
-</nav>
+<div class="w-full">
+    <nav th:fragment="navbar" class="bg-black flex justify-between">
+        <div>
+            <img class="h-10 w-10 rounded-full p-1.5" src="img/placeholder-avatar.jpeg" alt="logo">
+        </div>
+        <!-- awesome navbar goes here -->
+        <ul class="flex flex-row">
+            <li class="border-double p-1.5">
+                <form th:action="@{/}">
+                    <button class="text-white">HOME</button>
+                </form>
+            </li>
+            <li class="border-double p-1.5">
+                <form th:action="@{/posts}">
+                    <button class="text-white">ALL POSTS</button>
+                </form>
+            </li>
+            <li class="border-double p-1.5">
+                <form th:action="@{/posts/create}">
+                    <button class="text-white">CREATE POST</button>
+                </form>
+            </li>
+            <li class="border-double p-1.5">
+              <form th:action="@{/login}">
+                    <button class="text-white">LOGIN</button>
+                </form>
+            </li>
+            <li class="border-double p-1.5">
+               <form th:action="@{/logout}" th:method="post">
+                    <button class="text-white">LOGOUT</button>
+                </form>
+            </li>
+            <li class="border-double p-1.5">
+                <form th:action="@{/sign-up}">
+                    <button class="text-white">SIGNUP</button>
+                </form>
+            </li>
+        </ul>
+    </nav>
+</div>
 
 </body>
 </html>

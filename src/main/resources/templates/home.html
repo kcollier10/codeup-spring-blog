@@ -9,19 +9,24 @@
 
 <nav th:include="partials/navbar" :: navbar></nav>
 <!--<header th:include="partials/header" :: header></header>-->
-
-<div class="welcome flex justify-center">
-    <h1 class="items-center p-0.5 text-4xl italic mt-2.5 mb-2.5">Welcome to XPerience!</h1>
-</div>
-
-<div class="flex justify-center">
-    <div class="p-1.5">
-        <a th:href="@{|/posts|}" class="border border-3 p-1.5">VIEW ALL XPeriences</a>
+<div>
+    <div class="welcome flex justify-center">
+        <h1 class="items-center p-0.5 text-4xl italic mt-2.5 mb-2.5">Welcome to XPerience!</h1>
     </div>
-    <div class="p-1.5">
-        <a th:href="@{|/posts/search|}" class="border border-3 p-1.5">Search XPeriences...</a>
+
+    <div class="flex justify-center">
+        <div class="p-1.5">
+            <a th:href="@{|/posts|}" class="border border-3 p-1.5">VIEW ALL XPeriences</a>
+        </div>
+        <div class="p-1.5">
+            <a th:href="@{|/posts/search|}" class="border border-3 p-1.5">Search XPeriences...</a>
+        </div>
     </div>
-</div>
+
+    <div class="flex justify-center">
+        <p>Not a member? <a th:href="@{|/sign-up|}">Join now!</a></p>
+    </div>
+<div>
 
 <!--<footer th:include="partials/footer" :: footer></footer>-->
 
