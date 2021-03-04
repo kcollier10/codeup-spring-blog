@@ -13,18 +13,18 @@
         <!-- awesome navbar goes here -->
         <div class="flex flex-row justify-between">
 
-            <img class="h-10 bg-green-300 pl-1 pr-1" src="img/XPeriencelogo.png" alt="logo">
+            <img class="h-10 bg-green-300 pl-1 pr-1"  th:href="@{|/|}" src="img/XPeriencelogo.png" alt="logo">
 
 <!--            <p id="hamburgerbtn" class="md:hidden text-white border border-white">-->
 <!--                MENU-->
 <!--            </p>-->
         </div>
         <ul class="flex flex-row" id="mobileMenu">
-            <li class="border-double p-1.5">
-                <form th:action="@{/}">
-                    <button class="text-white">HOME</button>
-                </form>
-            </li>
+<!--            <li class="border-double p-1.5">-->
+<!--                <form th:action="@{/}">-->
+<!--                    <button class="text-white">HOME</button>-->
+<!--                </form>-->
+<!--            </li>-->
             <li class="border-double p-1.5">
                 <form th:action="@{/posts}">
                     <button class="text-white">ALL POSTS</button>
@@ -36,6 +36,7 @@
                     </button>
                 </form>
             </li>
+            <p class="text-white">||</p>
             <li class="border-double p-1.5">
               <form th:action="@{/login}">
                     <button class="text-white">LOGIN</button>
