@@ -592,8 +592,9 @@ video {
 /*}*/
 
 .body-bg {
-  background-color: #9921e8;
-  background-image: linear-gradient(315dg, #9921e8 0%, #5f72be 74%);
+  background-color: #3FE821;
+  background-image: linear-gradient(315dg, #213416 0%, #3FE821 74%);
+  opacity: 70%;
 }
 
 .space-y-0 > :not([hidden]) ~ :not([hidden]) {
