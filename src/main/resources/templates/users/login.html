@@ -4,27 +4,47 @@
     <meta charset="UTF-8" />
     <title>Log In</title>
 </head>
-<body>
 
 <nav th:include="partials/navbar" :: navbar></nav>
+<body class="body-bg min-h-screen pt-12 md:pt-20 pb-6 px-2 md:px-0">
 
-<h1>Log In</h1>
-<div th:if="${param.error}">
-    Invalid Username and Password.
-</div>
-<!--<div th:if="${param.logout}">-->
-<!--    You have been logged out.-->
-<!--</div>-->
+    <main class="bg-whiteCustom max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
 
-<form th:action="@{/login}" method="post" >
-    <label for="username">Username</label>
-    <input id="username" name="username" type="text" />
-    <label for="password">Password</label>
-    <input id="password" name="password" type="password" />
-    <input type="submit" value="Log In" />
-</form>
+        <section>
+            <h3 class="font-bold text-2xl">Welcome!</h3>
+            <p class="text-grayCustom-600 pt-2">Please login below.</p>
+        </section>
 
-<footer th:include="partials/footer" :: footer></footer>
+        <section class="mt-10">
+            <form th:action="@{/login}" method="post" class="flex flex-col">
+                <div class="mb-6 pt-3 rounded bg-grayCustom-200">
+                    <label class="block text-grayCustom-700 text-sm font-bold mb-2 ml-3" for="username">Username</label>
+                    <input class="bg-lightGrayCustom-200 rounded w-full text-grayCustom-700 focus:outline-none border-b-4 border-gray-300 focus:border-greenCustom-600 transition duration-500 px-3 pb-3" id="username" name="username" type="text" />
+                </div>
+                <div class="mb-6 pt-3 rounded bg-grayCustom-200">
+                    <label class="block text-grayCustom-700 text-sm font-bold mb-2 ml-3" for="password">Password</label>
+                    <input class="bg-lightGrayCustom-200 rounded w-full text-grayCustom-700 focus:outline-none border-b-4 border-gray-300 focus:border-greenCustom-600 transition duration-500 px-3 pb-3" id="password" name="password" type="password" />
+                </div>
+                <div>
+                    <input class="g-darkGreenCustom-600 hover:bg-greenCustom-700 text-whiteCustom font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit" value="Log In" />
+                </div>
+            </form>
+        </section>
+        <section>
+            <div th:if="${param.error}">
+                Invalid Username and Password.
+            </div>
+        </section>
+        <!--<div th:if="${param.logout}">-->
+        <!--    You have been logged out.-->
+        <!--</div>-->
+    </main>
+
+    <div class="max-w-lg max-auto flex justify-center text-center text-whiteCustom">
+        <p class="text-whiteCustom">Don't have an account?</p><a th:href="@{|/sign-up|}" class="font-bold hover:underline">Sign Up!</a>
+    </div>
+
+    <footer th:include="partials/footer" :: footer></footer>
 
 </body>
 </html>

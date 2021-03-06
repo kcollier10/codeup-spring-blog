@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <title>Sign up</title>
 </head>
+
+<nav th:include="partials/navbar" :: navbar></nav>
 <body class="body-bg min-h-screen pt-12 md:pt-20 pb-6 px-2 md:px-0">
 
-    <nav th:include="partials/navbar" :: navbar></nav>
 
     <header class="max-w-lg mx-auto">
         <h1 class="text-4xl font-bold text-whiteCustom text-center">Welcome to XPerience!</h1>
@@ -47,8 +48,8 @@
 
     </main>
 
-    <div class="max-w-lg max-auto flex justify-center text-whiteCustom">
-        <p class="text-whiteCustom">Don't have an account?</p><a th:href="@{|/sign-up|}" class="font-bold hover:underline">Sign Up!</a>
+    <div class="max-w-lg max-auto flex justify-center text-center text-whiteCustom">
+        <p class="text-whiteCustom">Already have an account?</p><a th:href="@{|/login|}" class="font-bold hover:underline">Sign Up!</a>
     </div>
 
     <footer th:include="partials/footer" :: footer></footer>
