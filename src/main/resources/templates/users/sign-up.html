@@ -31,15 +31,15 @@
             <form th:action="@{/sign-up}" method="POST" th:object="${user}" class="flex flex-col">
                <div class="mb-6 pt-3 rounded">
                     <label class="block text-grayCustom text-sm font-bold mb-2 ml-3 montserrat" for="username">Username</label>
-                    <input class="bg-lightGrayCustom rounded w-full text-grayCustom focus:outline-none border-b-4 border-greenCustom transition duration-500 px-3 pb-3 quicksand" id="username" th:field="*{username}" />
+                    <input class="bg-lightGrayCustom rounded w-full text-grayCustom focus:outline-none border-b-4 border-darkGreenCustom transition duration-500 px-3 pb-3 quicksand" id="username" th:field="*{username}" />
                </div>
                 <div class="mb-6 pt-3 rounded">
                     <label class="block text-grayCustom text-sm font-bold mb-2 ml-3 montserrat" for="email">Email</label>
-                    <input class="bg-lightGrayCustom rounded w-full text-grayCustom focus:outline-none border-b-4 border-greenCustom transition duration-500 px-3 pb-3 quicksand" id="email" th:field="*{email}" />
+                    <input class="bg-lightGrayCustom rounded w-full text-grayCustom focus:outline-none border-b-4 border-darkGreenCustom transition duration-500 px-3 pb-3 quicksand" id="email" th:field="*{email}" />
                 </div>
                 <div class="mb-6 pt-3 rounded">
                     <label class="block text-grayCustom text-sm font-bold mb-2 ml-3 montserrat" for="password">Password</label>
-                    <input class="bg-lightGrayCustom rounded w-full text-grayCustom focus:outline-none border-b-4 border-greenCustom transition duration-500 px-3 pb-3 quicksand" id="password" type="password" th:field="*{password}" />
+                    <input class="bg-lightGrayCustom rounded w-full text-grayCustom focus:outline-none border-b-4 border-darkGreenCustom transition duration-500 px-3 pb-3 quicksand" id="password" type="password" th:field="*{password}" />
                 </div>
                 <div class="text-center">
                     <input class="bg-darkGreenCustom hover:bg-greenCustom text-whiteCustom font-bold p-2 rounded shadow-lg hover:shadow-xl hover:text-blackCustom transition duration-200 montserrat mb-5" value="Sign me up!" type="submit" />
