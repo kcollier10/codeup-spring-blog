@@ -15,7 +15,7 @@
 
     <main class="bg-whiteCustom max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
 
-        <section>
+        <section class="items-center">
             <h3 class="font-bold text-2xl montserrat">Welcome!</h3>
             <p class="text-grayCustom-600 pt-2 quicksand">Please login below.</p>
         </section>
@@ -30,7 +30,7 @@
                     <label class="block text-grayCustom-700 text-sm font-bold mb-2 ml-3 montserrat" for="password">Password</label>
                     <input class="bg-lightGrayCustom-200 rounded w-full text-grayCustom-700 focus:outline-none border-b-4 border-gray-300 focus:border-greenCustom-600 transition duration-500 px-3 pb-3 quicksand" id="password" name="password" type="password" />
                 </div>
-                <div>
+                <div class="items-center">
                     <input class="g-darkGreenCustom-600 hover:bg-greenCustom-700 text-whiteCustom font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200 montserrat" type="submit" value="Log In" />
                 </div>
             </form>
@@ -45,8 +45,8 @@
         <!--</div>-->
     </main>
 
-    <div class="max-w-lg max-auto flex justify-center text-center text-whiteCustom">
-        <p class="text-whiteCustom">Don't have an account?</p><a th:href="@{|/sign-up|}" class="font-bold hover:underline">Sign Up!</a>
+    <div class="max-w-lg max-auto flex items-center text-center text-blackCustom">
+        <p>Don't have an account?</p><a th:href="@{|/sign-up|}" class="font-bold hover:underline">Sign Up!</a>
     </div>
 
     <footer th:include="partials/footer" :: footer></footer>
