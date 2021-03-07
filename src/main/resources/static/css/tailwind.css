@@ -597,6 +597,14 @@ video {
   opacity: 70%;
 }
 
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.quicksand {
+  font-family: 'Quicksand', sans-serif;
+}
+
 .space-y-0 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));

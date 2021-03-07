@@ -11,28 +11,28 @@
     <main class="bg-whiteCustom max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
 
         <section>
-            <h3 class="font-bold text-2xl">Welcome!</h3>
-            <p class="text-grayCustom-600 pt-2">Please login below.</p>
+            <h3 class="font-bold text-2xl montserrat">Welcome!</h3>
+            <p class="text-grayCustom-600 pt-2 quicksand">Please login below.</p>
         </section>
 
         <section class="mt-10">
             <form th:action="@{/login}" method="post" class="flex flex-col">
                 <div class="mb-6 pt-3 rounded bg-grayCustom-200">
-                    <label class="block text-grayCustom-700 text-sm font-bold mb-2 ml-3" for="username">Username</label>
-                    <input class="bg-lightGrayCustom-200 rounded w-full text-grayCustom-700 focus:outline-none border-b-4 border-gray-300 focus:border-greenCustom-600 transition duration-500 px-3 pb-3" id="username" name="username" type="text" />
+                    <label class="block text-grayCustom-700 text-sm font-bold mb-2 ml-3 montserrat" for="username">Username</label>
+                    <input class="bg-lightGrayCustom-200 rounded w-full text-grayCustom-700 focus:outline-none border-b-4 border-gray-300 focus:border-greenCustom-600 transition duration-500 px-3 pb-3 quicksand" id="username" name="username" type="text" />
                 </div>
                 <div class="mb-6 pt-3 rounded bg-grayCustom-200">
-                    <label class="block text-grayCustom-700 text-sm font-bold mb-2 ml-3" for="password">Password</label>
-                    <input class="bg-lightGrayCustom-200 rounded w-full text-grayCustom-700 focus:outline-none border-b-4 border-gray-300 focus:border-greenCustom-600 transition duration-500 px-3 pb-3" id="password" name="password" type="password" />
+                    <label class="block text-grayCustom-700 text-sm font-bold mb-2 ml-3 montserrat" for="password">Password</label>
+                    <input class="bg-lightGrayCustom-200 rounded w-full text-grayCustom-700 focus:outline-none border-b-4 border-gray-300 focus:border-greenCustom-600 transition duration-500 px-3 pb-3 quicksand" id="password" name="password" type="password" />
                 </div>
                 <div>
-                    <input class="g-darkGreenCustom-600 hover:bg-greenCustom-700 text-whiteCustom font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit" value="Log In" />
+                    <input class="g-darkGreenCustom-600 hover:bg-greenCustom-700 text-whiteCustom font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200 montserrat" type="submit" value="Log In" />
                 </div>
             </form>
         </section>
         <section>
-            <div th:if="${param.error}">
-                Invalid Username and Password.
+            <div th:if="${param.error}" class="montserrat text-center">
+                <p>Invalid Username and Password.</p>
             </div>
         </section>
         <!--<div th:if="${param.logout}">-->

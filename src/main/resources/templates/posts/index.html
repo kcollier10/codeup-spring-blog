@@ -15,9 +15,9 @@
 <!--<header th:include="partials/header" :: header></header>-->
 
 <div class="mt-3 mb-3">
-    <p class="text-3xl mb-2 text-center">Browse XPeriences</p>
-    <p class="text-center">Here you can find recently posted job experiences written by other users. Ability to search coming soon!</p>
-    <p class="text-center">If you would like to create your own post, please login to an existing account or make your way to SIGNUP to join XPerience.</p>
+    <p class="text-3xl mb-2 text-center montserrat">Browse XPeriences</p>
+    <p class="text-center quicksand">Here you can find recently posted job experiences written by other users. Ability to search coming soon!</p>
+    <p class="text-center quicksand">If you would like to create your own post, please login to an existing account or make your way to SIGNUP to join XPerience.</p>
 </div>
 
 <div class="flex-box sm:flex-col flex-wrap lg:grid lg:grid-cols-3 m-1">
@@ -25,17 +25,17 @@
         <img class="h-48 lg:w-auto lg:h-48 lg:w-auto flex-none bg-cover rounded text-center overflow-hidden" src="img/orange.jpg" alt="blog_header">
     <!--        <img class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" src="img/orange.jpg">-->
         <div class="mb-8 flex-col">
-            <p class="uppercase p-0.5 h-14 text-xl mb-2 font-bold" th:text="${post.title}"/></p>
-            <div class="italic p-0.5 max-h-12 overflow-hidden overflow-ellipsis block" th:text="${post.body}"/>
+            <p class="uppercase p-0.5 h-14 text-xl mb-2 font-bold montserrat" th:text="${post.title}"/></p>
+            <div class="italic p-0.5 max-h-12 overflow-hidden overflow-ellipsis block quicksand" th:text="${post.body}"/>
             <div class="flex justify-end">
-                <a th:href="@{|/posts/${post.id}|}">Read more...</a>
+                <a th:href="@{|/posts/${post.id}|}" class="montserrat">Read more...</a>
             </div>
         </div>
         <div class="member flex items-center">
             <img class="w-10 h-10 rounded-full mr-4" src="img/placeholder-avatar.jpeg">
             <div class="text-sm">
-                <p class="text-gray-900 leading-none" th:text="${post.user.username}"></p>
-                <p class="text-gray-600">Exampluary 7, 2738</p>
+                <p class="text-gray-900 leading-none quicksand" th:text="${post.user.username}"></p>
+                <p class="text-gray-600 quicksand">Exampluary 7, 2738</p>
             </div>
         </div>
 <!--        <div>-->
