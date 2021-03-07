@@ -11,56 +11,56 @@
 </head>
 
 <nav th:include="partials/navbar" :: navbar></nav>
-<body class="min-h-screen pt-12 md:pt-20 pb-6 px-2 md:px-0 flex flex-row">
+<body class="min-h-screen pt-12 md:pt-20 pb-6 px-2 md:px-0 flex flex-row space-around">
 
-    <main>
-        <img src="img/sign-up.jpg" alt="Sign up image from Pexels.">
-    </main>
+    <div class="background">
+        <img class="max-w-lg mx-auto" src="img/sign-up.jpg" alt="Sign up image from Pexels.">
+
 <!--    <header class="max-w-lg mx-auto mt-3">-->
 <!--        <h1 class="text-4xl font-bold text-blackCustom text-center montserrat">Welcome to XPerience!</h1>-->
 <!--    </header>-->
 
-    <main class="bg-whiteCustom max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
+        <main class="bg-whiteCustom max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
 
-        <section class="text-center">
-            <h3 class="font-bold text-2xl montserrat">We're excited for you to join us!</h3>
-            <p class="text-grayCustom-600 pt-2 quicksand">Please register below.</p>
-        </section>
+            <section class="text-center">
+                <h3 class="font-bold text-2xl montserrat">We're excited for you to join us!</h3>
+                <p class="text-grayCustom-600 pt-2 quicksand">Please register below.</p>
+            </section>
 
-        <section class="mt-10">
-            <form th:action="@{/sign-up}" method="POST" th:object="${user}" class="flex flex-col">
-               <div class="mb-6 pt-3 rounded bg-grayCustom-200">
-                    <label class="block text-grayCustom-700 text-sm font-bold mb-2 ml-3 montserrat" for="username">Username</label>
-                    <input class="bg-lightGrayCustom-200 rounded w-full text-grayCustom-700 focus:outline-none border-b-4 border-greenCustom-300 focus:border-greenCustom-600 transition duration-500 px-3 pb-3 quicksand" id="username" th:field="*{username}" />
-               </div>
-                <div class="mb-6 pt-3 rounded bg-gray-200">
-                    <label class="block text-grayCustom-700 text-sm font-bold mb-2 ml-3 montserrat" for="email">Email</label>
-                    <input class="bg-lightGrayCustom-200 rounded w-full text-grayCustom-700 focus:outline-none border-b-4 border-greenCustom-300 focus:border-greenCustom-600 transition duration-500 px-3 pb-3 quicksand" id="email" th:field="*{email}" />
+            <section class="mt-10">
+                <form th:action="@{/sign-up}" method="POST" th:object="${user}" class="flex flex-col">
+                   <div class="mb-6 pt-3 rounded bg-grayCustom-200">
+                        <label class="block text-grayCustom-700 text-sm font-bold mb-2 ml-3 montserrat" for="username">Username</label>
+                        <input class="bg-lightGrayCustom-200 rounded w-full text-grayCustom-700 focus:outline-none border-b-4 border-greenCustom-300 focus:border-greenCustom-600 transition duration-500 px-3 pb-3 quicksand" id="username" th:field="*{username}" />
+                   </div>
+                    <div class="mb-6 pt-3 rounded bg-gray-200">
+                        <label class="block text-grayCustom-700 text-sm font-bold mb-2 ml-3 montserrat" for="email">Email</label>
+                        <input class="bg-lightGrayCustom-200 rounded w-full text-grayCustom-700 focus:outline-none border-b-4 border-greenCustom-300 focus:border-greenCustom-600 transition duration-500 px-3 pb-3 quicksand" id="email" th:field="*{email}" />
+                    </div>
+                    <div class="mb-6 pt-3 rounded bg-gray-200">
+                        <label class="block text-grayCustom-700 text-sm font-bold mb-2 ml-3 montserrat" for="password">Password</label>
+                        <input class="bg-lightGrayCustom-200 rounded w-full text-grayCustom-700 focus:outline-none border-b-4 border-greenCustom-300 focus:border-greenCustom-600 transition duration-500 px-3 pb-3 quicksand" id="password" type="password" th:field="*{password}" />
+                    </div>
+                    <div class="text-center">
+                        <input class="bg-darkGreenCustom-600 hover:bg-greenCustom-700 text-whiteCustom font-bold p-2 rounded shadow-lg hover:shadow-xl hover:text-blackCustom transition duration-200 montserrat mb-5" value="Sign me up!" type="submit" />
+                    </div>
+                </form>
+            </section>
+
+            <section class="text-center">
+                <div th:if="${param.error}" class="montserrat">
+                    Username already exists in database.
                 </div>
-                <div class="mb-6 pt-3 rounded bg-gray-200">
-                    <label class="block text-grayCustom-700 text-sm font-bold mb-2 ml-3 montserrat" for="password">Password</label>
-                    <input class="bg-lightGrayCustom-200 rounded w-full text-grayCustom-700 focus:outline-none border-b-4 border-greenCustom-300 focus:border-greenCustom-600 transition duration-500 px-3 pb-3 quicksand" id="password" type="password" th:field="*{password}" />
+            </section>
+            <hr>
+            <section class="text-center">
+                <div class="max-w-lg mx-auto flex justify-center text-blackCustom mt-3">
+                    <p class="justify-center montserrat">Already have an account? </p><a th:href="@{|/login|}" class="font-bold hover:underline quicksand"> Sign Up!</a>
                 </div>
-                <div class="text-center">
-                    <input class="bg-darkGreenCustom-600 hover:bg-greenCustom-700 text-whiteCustom font-bold p-2 rounded shadow-lg hover:shadow-xl hover:text-blackCustom transition duration-200 montserrat mb-5" value="Sign me up!" type="submit" />
-                </div>
-            </form>
-        </section>
+            </section>
 
-        <section class="text-center">
-            <div th:if="${param.error}" class="montserrat">
-                Username already exists in database.
-            </div>
-        </section>
-        <hr>
-        <section class="text-center">
-            <div class="max-w-lg mx-auto flex justify-center text-blackCustom mt-3">
-                <p class="justify-center montserrat">Already have an account? </p><a th:href="@{|/login|}" class="font-bold hover:underline quicksand"> Sign Up!</a>
-            </div>
-        </section>
-
-    </main>
-
+        </main>
+    </div>
 
 <!--    <footer th:include="partials/footer" :: footer></footer>-->
 
