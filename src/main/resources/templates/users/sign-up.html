@@ -15,47 +15,50 @@
 
 
     <header class="max-w-lg mx-auto">
-        <h1 class="text-4xl font-bold text-whiteCustom text-center">Welcome to XPerience!</h1>
+        <h1 class="text-4xl font-bold text-whiteCustom text-center montserrat">Welcome to XPerience!</h1>
     </header>
 
     <main class="bg-whiteCustom max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
 
-        <section>
-            <h3 class="font-bold text-2xl">We're excited for you to join us!</h3>
-            <p class="text-grayCustom-600 pt-2">Please register below.</p>
+        <section class="text-center">
+            <h3 class="font-bold text-2xl montserrat">We're excited for you to join us!</h3>
+            <p class="text-grayCustom-600 pt-2 quicksand">Please register below.</p>
         </section>
 
         <section class="mt-10">
             <form th:action="@{/sign-up}" method="POST" th:object="${user}" class="flex flex-col">
                <div class="mb-6 pt-3 rounded bg-grayCustom-200">
-                    <label class="block text-grayCustom-700 text-sm font-bold mb-2 ml-3" for="username">Username</label>
-                    <input class="bg-lightGrayCustom-200 rounded w-full text-grayCustom-700 focus:outline-none border-b-4 border-gray-300 focus:border-greenCustom-600 transition duration-500 px-3 pb-3" id="username" th:field="*{username}" />
+                    <label class="block text-grayCustom-700 text-sm font-bold mb-2 ml-3 montserrat" for="username">Username</label>
+                    <input class="bg-lightGrayCustom-200 rounded w-full text-grayCustom-700 focus:outline-none border-b-4 border-gray-300 focus:border-greenCustom-600 transition duration-500 px-3 pb-3 quicksand" id="username" th:field="*{username}" />
                </div>
                 <div class="mb-6 pt-3 rounded bg-gray-200">
-                    <label class="block text-grayCustom-700 text-sm font-bold mb-2 ml-3" for="email">Email</label>
-                    <input class="bg-lightGrayCustom-200 rounded w-full text-grayCustom-700 focus:outline-none border-b-4 border-gray-300 focus:border-greenCustom-600 transition duration-500 px-3 pb-3" id="email" th:field="*{email}" />
+                    <label class="block text-grayCustom-700 text-sm font-bold mb-2 ml-3 montserrat" for="email">Email</label>
+                    <input class="bg-lightGrayCustom-200 rounded w-full text-grayCustom-700 focus:outline-none border-b-4 border-gray-300 focus:border-greenCustom-600 transition duration-500 px-3 pb-3 quicksand" id="email" th:field="*{email}" />
                 </div>
                 <div class="mb-6 pt-3 rounded bg-gray-200">
-                    <label class="block text-grayCustom-700 text-sm font-bold mb-2 ml-3" for="password">Password</label>
-                    <input class="bg-lightGrayCustom-200 rounded w-full text-grayCustom-700 focus:outline-none border-b-4 border-gray-300 focus:border-greenCustom-600 transition duration-500 px-3 pb-3" id="password" type="password" th:field="*{password}" />
+                    <label class="block text-grayCustom-700 text-sm font-bold mb-2 ml-3 montserrat" for="password">Password</label>
+                    <input class="bg-lightGrayCustom-200 rounded w-full text-grayCustom-700 focus:outline-none border-b-4 border-gray-300 focus:border-greenCustom-600 transition duration-500 px-3 pb-3 quicksand" id="password" type="password" th:field="*{password}" />
                 </div>
                 <div>
-                    <input class="bg-darkGreenCustom-600 hover:bg-greenCustom-700 text-whiteCustom font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" value="Sign me up!" type="submit" />
+                    <input class="bg-darkGreenCustom-600 hover:bg-greenCustom-700 text-whiteCustom font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200 montserrat" value="Sign me up!" type="submit" />
                 </div>
             </form>
         </section>
 
-        <section>
-            <div th:if="${param.error}">
+        <section class="text-center">
+            <div th:if="${param.error}" class="montserrat">
                 Username already exists in database.
+            </div>
+        </section>
+
+        <section class="text-center">
+            <div class="max-w-lg mx-auto flex items-center text-center text-blackCustom">
+                <p class="montserrat">Already have an account?</p><a th:href="@{|/login|}" class="font-bold hover:underline quicksand">Sign Up!</a>
             </div>
         </section>
 
     </main>
 
-    <div class="max-w-lg max-auto flex items-center text-center text-blackCustom">
-        <p>Already have an account?</p><a th:href="@{|/login|}" class="font-bold hover:underline">Sign Up!</a>
-    </div>
 
 <!--    <footer th:include="partials/footer" :: footer></footer>-->
 
