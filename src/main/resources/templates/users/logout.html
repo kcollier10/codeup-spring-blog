@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    <title>Home</title>
+</head>
+<body>
+<nav th:include="partials/navbar" :: navbar></nav>
+
+<!--    <header th:include="partials/header" :: header></header>-->
+
+<div class="mx-auto">
+    <p class="text-3xl montserrat">You have been successfully logged out!</p>
+    <a th:href="@{|/posts|}" class="quicksand text-2xl">--Head back to the posts page--</a>
+</div>
+
+<!--<footer th:include="partials/footer" :: footer></footer>-->
+
+</body>
+</html>
