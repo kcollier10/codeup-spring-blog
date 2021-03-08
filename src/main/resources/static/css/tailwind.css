@@ -613,9 +613,11 @@ h1 {
   font-family: Rockwell, cursive;
 }
 
-p {
-  margin: 25px;
-}
+/*p {*/
+
+/*    margin: 25px;*/
+
+/*}*/
 
 .space-y-0 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
