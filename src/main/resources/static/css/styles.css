@@ -21,4 +21,14 @@
         font-family: 'Quicksand', sans-serif;
     }
 
+    .container {
+        max-width: 750px;
+    }
+    h1 {
+        font-family: Rockwell, cursive;
+    }
+    p {
+        margin: 25px;
+    }
+
 }
