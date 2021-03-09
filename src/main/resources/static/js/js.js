@@ -24,7 +24,7 @@ $(document).ready(function(){
 
             $.get("https://www.googleapis.com/books/v1/volumes?q=" + search,function(response){
 
-                for(let i=0;i<response.items.length;i++)
+                for(i=0;i<response.items.length;i++)
                 {
                     title=$('<h5 class="center-align white-text">' + response.items[i].volumeInfo.title + '</h5>');
                     author=$('<h5 class="center-align white-text"> By:' + response.items[i].volumeInfo.authors + '</h5>');
