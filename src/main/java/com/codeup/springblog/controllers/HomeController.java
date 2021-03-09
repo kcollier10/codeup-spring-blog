@@ -26,4 +26,8 @@ public class HomeController {
         return "home";
     }
 
+    @GetMapping("/books")
+    public String booksSearchPage() {
+        return "related-books";
+    }
 }
