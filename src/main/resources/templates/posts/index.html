@@ -16,6 +16,16 @@
 
 <nav th:include="partials/navbar" :: navbar></nav>
 
+<div id="search" class="#f5f5f5 grey lighten-4 z-depth-5">
+    <form id="myform">
+        <div class="input-field">
+            <input type="search" id="books">
+            <label for="search">Search Books</label>
+        </div>
+        <button class="btn red">Search Books</button>
+    </form>
+</div>
+<div id="result">
 <!--<header th:include="partials/header" :: header></header>-->
 
 <!--<div class='container text-center'>-->
@@ -24,6 +34,7 @@
 <!--    <button class='btn btn-success'>New Quote</button>-->
 <!--    <p id='random_quote'></p>-->
 <!--</div>-->
+
 
 <div class="mt-3 mb-3">
     <p class="text-3xl mb-2 text-center montserrat">Browse XPeriences</p>
@@ -60,6 +71,7 @@
 
 
 <footer th:include="partials/footer" :: footer></footer>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/js.js"></script>
 </body>
 </html>
