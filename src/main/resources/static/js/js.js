@@ -22,7 +22,9 @@ $(document).ready(function(){
             let title = "";
             let author = "";
 
-            $.get("https://www.googleapis.com/books/v1/volumes?q=" + search + "&key=" + $[keys], function (response){
+            // $.get("https://www.googleapis.com/books/v1/volumes?q=" + search,function(response){
+            $.get("https://www.googleapis.com/books/v1/volumes?q=&key=" + $[keys]+ search, function (response){
+
                 for(let i=0;i<response.items.length;i++)
                 {
                     title=$('<h5 class="center-align white-text">' + response.items[i].volumeInfo.title + '</h5>');
