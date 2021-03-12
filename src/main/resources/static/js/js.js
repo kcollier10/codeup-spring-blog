@@ -23,7 +23,7 @@ $(document).ready(function(){
             let author = "";
 
             // $.get("https://www.googleapis.com/books/v1/volumes?q=" + search,function(response){
-            $.get("https://www.googleapis.com/books/v1/volumes?q=&key=" + $[keys]+ search, function (response){
+            $.get("https://www.googleapis.com/books/v1/volumes?q=" + search + "&keys=" + $[keys], function (response){
 
                 for(let i=0;i<response.items.length;i++)
                 {
